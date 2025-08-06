@@ -1,0 +1,208 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+button {
+  border: none !important;
+  outline: none !important;
+}
+button:hover {
+  border-color: transparent !important;
+}
+button:focus,
+button:focus-visible {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Loader CSS */
+.loader {
+  width: 55px;
+  aspect-ratio: 3;
+  --_g: no-repeat radial-gradient(circle closest-side,#fff 90%,#0000);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  20%{background-position:0%   0%, 50%  50%,100%  50%}
+  40%{background-position:0% 100%, 50%   0%,100%  50%}
+  60%{background-position:0%  50%, 50% 100%,100%   0%}
+  80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+
+/* Custom input/select CSS */
+.input-field, .custom-select {
+  color: #acacac;
+  border-color: #4a4a4a;
+  transition: border-color 0.2s;
+  background: transparent;
+}
+.input-field:focus, .custom-select:focus {
+  border-color: #8a8a8a;
+  outline: none;
+}
+.custom-select {
+  background: url('data:image/svg+xml;utf8,<svg fill="%23666" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 0.75rem center/1.25em;
+  padding-right: 2.5rem;
+}
+.custom-select > option {
+  background: #262626;
+}
+
+/* Task card */
+.task-card {
+  transition: all 0.3s ease;
+  border: 1px solid #1a1a1a;
+}
+/* Task card - Mirror Shine Animation*/
+.task-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, transparent, #ffffff0d, transparent
+  );
+  transition: left 0.7s ease;
+  z-index: 0;
+}
+.task-card:hover::before {
+  left: 100%;
+}
+.task-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.badge {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  border:1px solid #222;
+}
+.badge.low {
+  background: #e0ffe2;
+  color: #267a30;
+}
+.badge.medium {
+  background: #fff4d6;
+  color: #b98200;
+}
+.badge.high {
+  background: #ffe7e7;
+  color: #d33;
+}
+.badge.progress {
+  background: #d7eaff;
+  color: #005bbd;
+}
+.badge.completed {
+  background: #ccf3d2;
+  color: #2e7d32;
+}
+.badge2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.75rem;
+  background-color: #2f3742;
+  color: #d1d5db;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Button Mark as In Progress/Completed */
+.button-smooth {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition: transform 0.3s ease;
+}
+.button-smooth::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+.button-smooth:hover::before {
+  opacity: 1;
+}
+.button-gradient::before {
+  background: linear-gradient(to right, #4338ca, #717cf7);
+}
+.button-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Button Task Delete */
+.button-delete::before {
+  background: #dc2626;
+}
+.shake-effect {
+  animation: shake 0.6s ease-in-out infinite;
+}
+@keyframes shake {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(-10deg); }
+  40%  { transform: rotate(10deg); }
+  60%  { transform: rotate(-10deg); }
+  80%  { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Send Button Tooltip */
+.tooltip-box {
+  @apply bottom-[117%] left-1/2 -translate-x-1/2 px-3 py-2 shadow text-xs rounded bg-[#303030] text-[#b8b8b8] opacity-0 peer-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50;
+  position: absolute;
+  border: 1px solid #2a2a2a;
+}
+.tooltip-box::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #303030 transparent transparent transparent;
+}
+
+/* Swal Custom CSS */
+div.swal2-container.swal2-backdrop-show {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+div.swal2-popup {
+  background-color: #1e1e1e;
+}
+h2.swal2-title {
+  color: #e5e7eb;
+}
+div.swal2-html-container {
+  color: #9ca3af;
+}
+div.swal2-actions {
+  display: flex !important;
+  justify-content: flex-end !important;
+  margin: 1.25em  1.25em 0 0;
+}
+button.swal2-confirm.swal2-styled {
+  background-color: #4338ca;
+}
+button.swal2-confirm.swal2-styled:hover {
+  background-color: #4f46e5;
+}
+button.swal2-cancel {
+  background-color: #374151 !important;
+}
+button.swal2-cancel:hover {
+  background-color: #4b5563 !important;
+}
