@@ -70,7 +70,7 @@ A full-stack task management application built with Django (Python), React.js, P
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/aman99jnvchd/task-manager.git
    cd taskmanager/backend
    ```
 
@@ -218,6 +218,5 @@ All connected users receive instant updates via WebSocket connections.
 ## 📄 License
 
 This project is licensed under the MIT License.
----
 
 **Note**: This application demonstrates advanced full-stack development concepts including real-time updates, role-based access control, advanced filtering, and modern web development practices.
