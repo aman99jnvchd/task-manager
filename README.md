@@ -218,5 +218,3 @@ All connected users receive instant updates via WebSocket connections.
 ## 📄 License
 
 This project is licensed under the MIT License.
-
-**Note**: This application demonstrates advanced full-stack development concepts including real-time updates, role-based access control, advanced filtering, and modern web development practices.
